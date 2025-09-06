@@ -81,14 +81,14 @@ gds.google.com	FALSE	/	TRUE	1753025749	OTZ	8135496_34_34__34_
 .mozilla.org	TRUE	/	FALSE	1750433863	_gat	1
 """
 
-API_ID = int(getenv("API_ID", "29194780"))
-API_HASH = getenv("API_HASH", "e9182befc8cb23455a552e551c7d43e6")
+API_ID = int(getenv("API_ID", "22462679"))
+API_HASH = getenv("API_HASH", "f39e3d449b91507bf815c5ed9109d7e3")
 BOT_TOKEN = getenv("BOT_TOKEN", "7724660683:AAHxB3YvpwhOuR6B-JqEeH4TO-LeZwWHu98")
-OWNER_ID = list(map(int, getenv("OWNER_ID", "1314374942").split()))
+OWNER_ID = list(map(int, getenv("OWNER_ID", "7761529575").split()))
 MONGO_DB = getenv("MONGO_DB", "mongodb+srv://rs92573993688:pVf4EeDuRi2o92ex@cluster0.9u29q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-LOG_GROUP = getenv("LOG_GROUP", "-1002786746500")
-CHANNEL_ID = int(getenv("CHANNEL_ID", "-1002821811146"))
-FREEMIUM_LIMIT = int(getenv("FREEMIUM_LIMIT", "10"))
+LOG_GROUP = getenv("LOG_GROUP", "-1002984444951")
+CHANNEL_ID = int(getenv("CHANNEL_ID", "-1003025704088"))
+FREEMIUM_LIMIT = int(getenv("FREEMIUM_LIMIT", "0"))
 PREMIUM_LIMIT = int(getenv("PREMIUM_LIMIT", "10000"))
 WEBSITE_URL = getenv("WEBSITE_URL", "upshrink.com")
 AD_API = getenv("AD_API", "52b4a2cf4687d81e7d3f8f2b7bc2943f618e78cb")
