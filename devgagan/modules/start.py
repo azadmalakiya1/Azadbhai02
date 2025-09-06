@@ -174,16 +174,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @app.on_message(filters.command("terms") & filters.private)
 async def terms(client, message):
     terms_text = (
-        "> 📜 **الشروط والأحكام** 📜\n\n"
-"✨ نحن غير مسؤولين عن تصرفات المستخدمين، ولا نشجع على أي محتوى محمي بحقوق الطبع والنشر. إذا قام أي مستخدم بمثل هذه الأنشطة، فإنه يتحمل المسؤولية الكاملة.\n"
-"✨ عند الشراء، لا نضمن مدة التشغيل أو التوقف أو صلاحية الخطة. __يحق لنا حظر أو منح صلاحيات للمستخدمين في أي وقت حسب تقديرنا الخاص.__\n"
-"✨ الدفع لنا **__لا يضمن__** الحصول على صلاحية استخدام أمر /batch. جميع القرارات المتعلقة بالصلاحيات تتخذ حسب تقديرنا ومزاجنا.\n"
+        "> 📜 **Terms and Conditions** 📜\n\n"
+        "✨ We are not responsible for user deeds, and we do not promote copyrighted content. If any user engages in such activities, it is solely their responsibility.\n"
+        "✨ Upon purchase, we do not guarantee the uptime, downtime, or the validity of the plan. __Authorization and banning of users are at our discretion; we reserve the right to ban or authorize users at any time.__\n"
+        "✨ Payment to us **__does not guarantee__** authorization for the /batch command. All decisions regarding authorization are made at our discretion and mood.\n"
     )
      
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/Swl1z")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/jaymataji0101")],
         ]
     )
     await message.reply_text(terms_text, reply_markup=buttons)
@@ -192,18 +192,17 @@ async def terms(client, message):
 @app.on_message(filters.command("plan") & filters.private)
 async def plan(client, message):
     plan_text = (
-         "> 💰**السعر المميز**\n\n"
-"ابتداءً من 2 دولار أو 199 روبية هندية، يُقبل الدفع عبر **__بطاقة هدية أمازون__** (تطبق الشروط والأحكام).\n"
-"📥 **حد التنزيل**: يمكن للمستخدمين تنزيل ما يصل إلى 100,000 ملف باستخدام أمر batch واحد.\n"
-"🛑 **Batch**: ستحصل على وضعين /bulk و /batch.\n"
-"   - يُنصح المستخدمون بالانتظار حتى يتم الإلغاء التلقائي للعملية قبل متابعة أي تنزيل أو تحميل.\n\n"
-"📜 **الشروط والأحكام**: لمزيد من التفاصيل والشروط الكاملة، أرسل /terms أو انقر على 'عرض الشروط' 👇\n"
+        "> 💰 **Premium Price**:\n\n Starting from $1 or 99 INR accepted via **__Amazon Gift Card__** (terms and conditions apply).\n"
+        "📥 **Download Limit**: Users can download up to 100,000 files in a single batch command.\n"
+        "🛑 **Batch**: You will get two modes /bulk and /batch.\n"
+        "   - Users are advised to wait for the process to automatically cancel before proceeding with any downloads or uploads.\n\n"
+        "📜 **Terms and Conditions**: For further details and complete terms and conditions, please send /terms.\n"
     )
      
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/Swl1z")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/jaymataji0101")],
         ]
     )
     await message.reply_text(plan_text, reply_markup=buttons)
@@ -212,18 +211,17 @@ async def plan(client, message):
 @app.on_callback_query(filters.regex("see_plan"))
 async def see_plan(client, callback_query):
     plan_text = (
-        "> 💰**السعر المميز**\n\n"
-"ابتداءً من 2 دولار أو 199 روبية هندية، يُقبل الدفع عبر **__بطاقة هدية أمازون__** (تطبق الشروط والأحكام).\n"
-"📥 **حد التنزيل**: يمكن للمستخدمين تنزيل ما يصل إلى 100,000 ملف باستخدام أمر batch واحد.\n"
-"🛑 **Batch**: ستحصل على وضعين /bulk و /batch.\n"
-"   - يُنصح المستخدمون بالانتظار حتى يتم الإلغاء التلقائي للعملية قبل متابعة أي تنزيل أو تحميل.\n\n"
-"📜 **الشروط والأحكام**: لمزيد من التفاصيل والشروط الكاملة، أرسل /terms أو انقر على 'عرض الشروط' 👇\n"
+        "> 💰**Premium Price**\n\n Starting from $1 or 99 INR accepted via **__Amazon Gift Card__** (terms and conditions apply).\n"
+        "📥 **Download Limit**: Users can download up to 100,000 files in a single batch command.\n"
+        "🛑 **Batch**: You will get two modes /bulk and /batch.\n"
+        "   - Users are advised to wait for the process to automatically cancel before proceeding with any downloads or uploads.\n\n"
+        "📜 **Terms and Conditions**: For further details and complete terms and conditions, please send /terms or click See Terms👇\n"
     )
      
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/Swl1z")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/jaymataji0101")],
         ]
     )
     await callback_query.message.edit_text(plan_text, reply_markup=buttons)
@@ -232,16 +230,16 @@ async def see_plan(client, callback_query):
 @app.on_callback_query(filters.regex("see_terms"))
 async def see_terms(client, callback_query):
     terms_text = (
-       "> 📜 **الشروط والأحكام** 📜\n\n"
-"✨ نحن غير مسؤولين عن تصرفات المستخدمين، ولا نشجع على أي محتوى محمي بحقوق الطبع والنشر. إذا قام أي مستخدم بمثل هذه الأنشطة، فإنه يتحمل المسؤولية الكاملة.\n"
-"✨ عند الشراء، لا نضمن مدة التشغيل أو التوقف أو صلاحية الخطة. __يحق لنا حظر أو منح صلاحيات للمستخدمين في أي وقت حسب تقديرنا الخاص.__\n"
-"✨ الدفع لنا **__لا يضمن__** الحصول على صلاحية استخدام أمر /batch. جميع القرارات المتعلقة بالصلاحيات تتخذ حسب تقديرنا ومزاجنا.\n"
+        "> 📜 **Terms and Conditions** 📜\n\n"
+        "✨ We are not responsible for user deeds, and we do not promote copyrighted content. If any user engages in such activities, it is solely their responsibility.\n"
+        "✨ Upon purchase, we do not guarantee the uptime, downtime, or the validity of the plan. __Authorization and banning of users are at our discretion; we reserve the right to ban or authorize users at any time.__\n"
+        "✨ Payment to us **__does not guarantee__** authorization for the /batch command. All decisions regarding authorization are made at our discretion and mood.\n"
     )
      
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/Swl1z")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/jaymataji0101")],
         ]
     )
     await callback_query.message.edit_text(terms_text, reply_markup=buttons)
