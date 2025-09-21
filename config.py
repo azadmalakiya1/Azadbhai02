@@ -28,7 +28,7 @@ www.wikipedia.org	FALSE	/	TRUE	1750437260	NetworkProbeLimit	0.001
 .youtube.com	TRUE	/	TRUE	0	YSC	DKyXtR2gZB8
 .youtube.com	TRUE	/	TRUE	1765985720	__Secure-ROLLOUT_TOKEN	CKzpktuYyuW-9gEQuf-_4amAjgMYwqDc4amAjgM%3D
 .youtube.com	TRUE	/	TRUE	1765985775	VISITOR_INFO1_LIVE	E-mL-YXFbaE
-.youtube.com	TRUE	/	TRUE	1765985775	VISITOR_PRIVACY_METADATA	CgJJThIEGgAgYQ%3D%3D
+use.youtube.com	TRUE	/	TRUE	1765985775	VISITOR_PRIVACY_METADATA	CgJJThIEGgAgYQ%3D%3D
 .youtube.com	TRUE	/	TRUE	1750435520	GPS	1
 .youtube.com	TRUE	/	TRUE	1784993775	PREF	f6=40000000&tz=Asia.Kolkata
 accounts.google.com	FALSE	/	TRUE	1784993746	__Host-GAPS	1:GxwHZJ3BB93JVb0sfH9V0hcRkxfro3Qz8PItSpDGi_LYYIHD3t7iu048Y5KavMSAV9rTnxLOQfKfjaROX9aJVtLb8ATsAA:KHvquzz1UJcCc9Cb
@@ -84,8 +84,8 @@ gds.google.com	FALSE	/	TRUE	1753025749	OTZ	8135496_34_34__34_
 API_ID = int(getenv("API_ID", "22462679"))
 API_HASH = getenv("API_HASH", "f39e3d449b91507bf815c5ed9109d7e3")
 BOT_TOKEN = getenv("BOT_TOKEN", "7724660683:AAHxB3YvpwhOuR6B-JqEeH4TO-LeZwWHu98")
-OWNER_ID = list(map(int, getenv("OWNER_ID", "7761529575").split()))
-MONGO_DB = getenv("MONGO_DB", "mongodb+srv://rs92573993688:pVf4EeDuRi2o92ex@cluster0.9u29q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+OWNER_ID = list(map(int, getenv("OWNER_ID", "1955406483").split()))
+MONGO_DB = getenv("MONGO_DB", "mongodb+srv://azadmalakiya00_db:azadmalakiya_120@cluster0.toxfuht.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 LOG_GROUP = getenv("LOG_GROUP", "-1002984444951")
 CHANNEL_ID = int(getenv("CHANNEL_ID", "-1003025704088"))
 FREEMIUM_LIMIT = int(getenv("FREEMIUM_LIMIT", "3"))
