@@ -49,8 +49,8 @@ async def stats(client, message):
     premium = await premium_users()
     ping = round((time.time() - start) * 1000)
 
-    # Get premium user IDs
-    premium_ids = [str(user["user_id"]) for user in premium] if premium else ["None"]
+    # Fixed: premium returns Int64, not dict
+    premium_ids = [str(user) for user in premium] if premium else ["None"]
 
     await message.reply_text(f"""
 Stats of {(await client.get_me()).mention} :
