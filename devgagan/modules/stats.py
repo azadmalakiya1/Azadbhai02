@@ -3,6 +3,7 @@ import sys
 import motor
 from devgagan import app
 from pyrogram import filters
+from pyrogram.enums import ParseMode
 from config import OWNER_ID
 from devgagan.core.mongo.users_db import get_users, add_user, get_user
 from devgagan.core.mongo.plans_db import premium_users
@@ -49,20 +50,22 @@ async def stats(client, message):
     premium = await premium_users()
     ping = round((time.time() - start) * 1000)
 
+    # -------------------- Premium Users List with HTML links --------------------
     premium_list = []
     if premium:
         for user_id in premium:
             try:
                 user = await client.get_users(user_id)
-                name = user.first_name
-                # Markdown link to user's Telegram profile
-                premium_list.append(f"[{name}](tg://user?id={user_id})")
+                name = user.first_name or "Unknown"
+                # HTML link to user's Telegram profile
+                premium_list.append(f'<a href="tg://user?id={user_id}">{name}</a>')
             except:
                 # fallback if user info cannot be fetched
-                premium_list.append(f"[Unknown](tg://user?id={user_id})")
+                premium_list.append(f'<a href="tg://user?id={user_id}">Unknown</a>')
     else:
         premium_list = ["None"]
 
+    # -------------------- Reply with Stats --------------------
     await message.reply_text(f"""
 Stats of {(await client.get_me()).mention} :
 
@@ -74,4 +77,4 @@ Stats of {(await client.get_me()).mention} :
 
 🎨 Python Version: {sys.version.split()[0]}
 📑 Mongo Version: {motor.version}
-""", parse_mode="Markdown")
+""", parse_mode=ParseMode.HTML)
