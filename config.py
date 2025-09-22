@@ -84,7 +84,7 @@ gds.google.com	FALSE	/	TRUE	1753025749	OTZ	8135496_34_34__34_
 API_ID = int(getenv("API_ID", "22462679"))
 API_HASH = getenv("API_HASH", "f39e3d449b91507bf815c5ed9109d7e3")
 BOT_TOKEN = getenv("BOT_TOKEN", "7724660683:AAHxB3YvpwhOuR6B-JqEeH4TO-LeZwWHu98")
-OWNER_ID = list(map(int, getenv("OWNER_ID", "7761529575").split()))
+OWNER_ID = list(map(int, getenv("OWNER_ID", "1955406483").split()))
 MONGO_DB = getenv("MONGO_DB", "mongodb+srv://azadmalakiya00_db:azadmalakiya_120@cluster0.toxfuht.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 LOG_GROUP = getenv("LOG_GROUP", "-1002984444951")
 CHANNEL_ID = int(getenv("CHANNEL_ID", "-1003025704088"))
