@@ -82,11 +82,12 @@ async def get_seconds(time_string):
     else:
         return 0
 PROGRESS_BAR = """\n
-│ **__Completed:__** {1}/{2}
-│ **__Bytes:__** {0}%
-│ **__Speed:__** {3}/s
-│ **__ETA:__** {4}
-╰─────────────────────╯
+┉━┉━┉━┉┉━┉━┉━┉┉━┉━
+>*┋ Total Size:⚜️ {2}
+>*┋ Completed:✅ {1}
+>*┋ Progress:💠 {0}%
+>*┋ Speed:🚀 {3}/s
+>*┋ ETA:⏳ {4}\n ╚═══━━━─⚝─━━━═══╝\n\n Now You Can Rest...😉
 """
 async def progress_bar(current, total, ud_type, message, start):
 
@@ -243,14 +244,13 @@ async def progress_callback(current, total, progress_message):
         current_mb = current / (1024 * 1024)  
         total_mb = total / (1024 * 1024)      
         await progress_message.edit(
-    f"╭──────────────────╮\n"
-    f"│        **__Uploading...__**       \n"
-    f"├──────────\n"
-    f"│ {progress_bar}\n\n"
-    f"│ **__Progress:__** {percent:.2f}%\n"
-    f"│ **__Uploaded:__** {current_mb:.2f} MB / {total_mb:.2f} MB\n"
-    f"╰──────────────────╯\n\n"
-    f"**__Powered by Team SPY__**"
+    f"╔══━⚡️Uploading⚡️━══╗\n"
+    f" ┉━┉━┉━┉┉━┉━┉━┉┉━┉━\n"
+    f">*┋ {progress_bar}\n\n"
+    f">*┋ Progress: {percent:.2f}%\n"
+    f">*┋ Uploaded: {current_mb:.2f} MB / {total_mb:.2f} MB\n\n"
+    f"  ╚═══━━━─⚝─━━━═══╝\n\n"
+    f"Pwrd By ╰‿╯ ҡσℓเ  ⚝"
         )
 
         last_update_time = current_time
